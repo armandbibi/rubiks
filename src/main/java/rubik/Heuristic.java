@@ -6,9 +6,15 @@ import rubik.coordinates.pruningTable.PruningTableOne;
 
 public class Heuristic {
 
-    private static int[][] prune = PruningTableOne.generatePruningTable();
+    private static int[][] prune;
+
+    public static void generate() {
+
+        prune = PruningTableOne.generatePruningTable();
+        //prune =  new int[64430][2187];
+    }
 
     public static int estimate (Rubicube cube) {
-        return prune[BorderOrientationCoordinate.check()][CornerOrientationCoordinate.check()];
+        return prune[BorderOrientationCoordinate.check(cube)][CornerOrientationCoordinate.check(cube)];
     }
 }

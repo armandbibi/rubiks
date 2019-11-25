@@ -41,9 +41,24 @@ public class Rubicube implements Cloneable {
         return false;
     }
 
+    public  Rubicube[] clone3PossibilitiesForDirection(Rubicube cube, Move move) {
+
+        Rubicube[] list = new Rubicube[3];
+        try {
+            list[0] = cube.clone();
+            list[1] = cube.clone();
+            list[2] = cube.clone();
+            Swaper.swap(list[0].state = cube.state.clone(), move);
+            Swaper.swap(list[1].state = list[0].state.clone(), move);
+            Swaper.swap(list[2].state = list[1].state.clone(), move);
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
     public Rubicube clone() throws CloneNotSupportedException {
         Rubicube cloned = (Rubicube) super.clone();
-        cloned.state = this.state.clone();
         cloned.previousCube = this;
         cloned.totalDistance = this.totalDistance + 1;
         return cloned;
@@ -57,5 +72,13 @@ public class Rubicube implements Cloneable {
         this.totalDistance = totalDistance;
     }
 
-    public void getPreviousCube() { return this.previousCube;}
+    public Rubicube getPreviousCube() { return this.previousCube;}
+
+    public int getRealDistance() {
+        return this.realDistance;
+    }
+
+    public int getTotalDistance() {
+        return totalDistance;
+    }
 }

@@ -4,6 +4,7 @@ import rubik.Heuristic;
 import rubik.Rubicube;
 import rubik.State;
 
+import java.awt.print.PrinterIOException;
 import java.util.*;
 
 public class IDASTAR {
@@ -50,33 +51,42 @@ public class IDASTAR {
         }
         long end = System.currentTimeMillis();
         Rubicube solutionDebugDisplay = this.finalCube;
-        while (solutionDebugDisplay.getPreviousMove() != null) {
-            System.out.println(solutionDebugDisplay.getState().displayDebug(););
+        while (solutionDebugDisplay.getPreviousCube() != null) {
+            solutionDebugDisplay.getState().displayDebug();
+            solutionDebugDisplay = solutionDebugDisplay.getPreviousCube();
         }
+        return finalCube;
     }
 
     private Rubicube depthFirstSearch(Rubicube cube, int realBound) {
-        if (cube.getState().equals(solution.getState()))
+        if (Arrays.equals(cube.getState().getBoard(), (solution.getState().getBoard())))
             return cube;
         totalMoveSeen++;
         
         List<Rubicube> children = CubeUtils.visitChildrenOf(cube);
-        List<Rubicube> validChildren = new PriorityQueue<>(comparator);
+        PriorityQueue<Rubicube> validChildren = new PriorityQueue<>(comparator);
         for (Rubicube child : children) {
             int hash = Arrays.hashCode(child.getState().getBoard());
             if (!openSet.containsKey(hash)) {
-                int h = heuristic.estimate(child, pruningTable);
-                int value = child.getRealDistance + h;
+                int h = Heuristic.estimate(child);
+                int value = child.getRealDistance() + h;
+                child.setTotalDistance(value);
                 validChildren.add(child);
+                openSet.put(hash, child);
                 if (nextCostBound < value)
                     nextCostBound = value;
             }
         }
 
         for (Rubicube child: validChildren) {
-            if (child.getTotalDistance() <= totalDistance) {
-
+            if (child.getTotalDistance() <= currentBound) {
+                Rubicube result = depthFirstSearch(child, realBound + 1);
+                if (result != null)
+                    return result;
             }
+            openSet.remove(Arrays.hashCode(child.getState().getBoard()), child);
+
         }
+        return null;
     }
 }
