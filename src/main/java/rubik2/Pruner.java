@@ -65,7 +65,7 @@ public class Pruner implements ConstantCoords{
             for (int j = 0; j < 6; j++) {
                 for (int k = 0; k < 3; k++) {
                     cubieCube.multiplyTheCorners();
-                    twistMove[i][3 * j + k] = cubieCube.getTwist();
+                    twistMove[i][3 * j + k] = (short) cubieCube.getTwist();
                 }
                 cubieCube.multiplyTheCorners();
             }
@@ -84,7 +84,7 @@ public class Pruner implements ConstantCoords{
             for (int j = 0; j < 6; j++) {
                 for (int k = 0; k < 3; k++) {
                     cubiCube.multiplyTheEdges(moveCube[j]);
-                    flipMove[i][3 * j + k] = cubiCube.getFlip();
+                    flipMove[i][3 * j + k] = (short) cubiCube.getFlip();
                 }
                 cubiCube.multiplyTheEdges(moveCube[j]);
             }
@@ -114,7 +114,7 @@ public class Pruner implements ConstantCoords{
             for (int j = 0; j < 6; j++) {
                 for (int k = 0; k < 3; k++) {
                     cubieCube.multiplyTheEdges(moveCube[j]);
-                    FRtoBRMove[i][3 * j + k] = cubieCube.getFRtoBR();
+                    FRtoBRMove[i][3 * j + k] = (short) cubieCube.getFRtoBR();
                 }
                 cubieCube.multiplyTheEdges(moveCube[j]);
             }
@@ -134,7 +134,7 @@ public class Pruner implements ConstantCoords{
             for (int j = 0; j < 6; j++) {
                 for (int k = 0; k < 3; k++) {
                     cubieCube.multiplyTheCorners(moveCube[j]);
-                    FRtoBRMove[i][3 * j + k] = cubieCube.getURFtoDLF();
+                    FRtoBRMove[i][3 * j + k] = (short) cubieCube.getURFtoDLF();
                 }
                 cubieCube.multiplyTheCorners(moveCube[j]);
             }
@@ -154,7 +154,7 @@ public class Pruner implements ConstantCoords{
             for (int j = 0; j < 6; j++) {
                 for (int k = 0; k < 3; k++) {
                     cubieCube.multiplyTheEdges(moveCube[j]);
-                    URtoDFMove[i][3 * j + k] = cubieCube.getURtoDF();
+                    URtoDFMove[i][3 * j + k] = (short) cubieCube.getURtoDF();
                 }
                 cubieCube.multiplyTheEdges(moveCube[j]);
             }
@@ -333,22 +333,11 @@ public class Pruner implements ConstantCoords{
                         int newSlice = FRtoBRMove[slice * 24][j] / 24;
                         int newFlip = flipMove[flip][j];
                         if (table.getPruning(N_SLICE1 * newFlip + newSlice) == 0x0f) {
-                            table.setPruning(N_SLICE1 * newFlip + newSlice (depth + 1) & 0xff);
+                            table.setPruning(N_SLICE1 * newFlip + newSlice, (depth + 1) & 0xff);
                         }
                     }
                 }
             }
         }
     }
-
-
-
-
-
-
-
-    private static short getURtoDF(int urToUL, int uBtoUL) {
-        return 0;
-    }
-
 }

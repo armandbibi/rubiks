@@ -104,4 +104,13 @@ public interface ConstantCubieCube {
     public static final int B8 = 52;
     public static final int B9 = 53;
 
+    /*-----------------------------*/
+    /*---- Array to hold values ---*/
+    /*-----------------------------*/
+
+    public static final byte[] cornerValues = { URF, UFL, ULB, UBR, DFR, DLF, DBL, DRB,};
+
+    public static final byte[] edgesValues = new byte[]{UR, UF, UL, UB, DR, DF, DL, DB, FR, FL, BL, BR};
+
+
 }

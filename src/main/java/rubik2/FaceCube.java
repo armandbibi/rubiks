@@ -5,7 +5,12 @@ public class FaceCube implements ConstantCoords, ConstantCubieCube {
     byte[] facelets;
     byte[][] cornerFacelet;
     byte[][] cornerColor;
-    
+    byte[][] edgeColor;
+
+    public FaceCube() {
+        this("UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB");
+    }
+
     public FaceCube(String cubeString) {
         
         facelets = new byte[cubeString.length()];
@@ -18,5 +23,27 @@ public class FaceCube implements ConstantCoords, ConstantCubieCube {
         cornerColor = new byte[][]{
                 { U, R, F }, { U, F, L }, { U, L, B }, { U, B, R },
                 {D, F, R }, {D, L, F }, {D, B, L }, { D, R, B }};
+        edgeColor = new byte[][]{
+                { U, R }, { U, F }, { U, L },
+                { U, B }, { D, R }, {D, F },
+                { D, L }, { D, B }, { F, R },
+                { F, L }, { B, L }, { B, R }
+        };
+    }
+
+    public byte[] getFacelets() {
+        return facelets;
+    }
+
+    public byte[][] getCornerFacelet() {
+        return cornerFacelet;
+    }
+
+    public byte[][] getCornerColor() {
+        return cornerColor;
+    }
+
+    public byte[][] getEdgeColor() {
+        return edgeColor;
     }
 }
