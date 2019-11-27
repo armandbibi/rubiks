@@ -1,7 +1,5 @@
 package rubik2;
 
-import javax.swing.text.DocumentFilter;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class CubieCube implements ConstantCubieCube, Cloneable{
@@ -19,6 +17,13 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         co = new byte[]{0, 0 ,0 ,0 ,0 ,0, 0 ,0};
         ep = new byte[]{UR, UF, UL, UB, DR, DF, DL, DB, FR, FL, BL, BR};
         eo = new byte[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    }
+
+    public CubieCube(byte[] cp, byte[] co, byte[] ep, byte[]eo) {
+        this.cp = cp;
+        this.co = co;
+        this.ep = ep;
+        this.eo = eo;
     }
 
     public FaceCube toFaceCube() {
@@ -101,7 +106,7 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
      * multiply 2 cubes (edge level only)
      * @param multiplier
      */
-    public CubieCube multiplyTheEdges(CubieCube multiplier) {
+    public void multiplyTheEdges(CubieCube multiplier) {
 
         byte[] edgePerms = new byte[edgesValues.length];
         byte[] edgeOrientation = new byte[edgesValues.length];
@@ -109,7 +114,7 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         for (int i = 0; i < edgesValues.length; i++) {
             byte tmp = multiplier.ep[i];
             edgePerms[i] = ep[tmp];
-            edgeOrientation[i] = (byte) ((multiplier.eo[i] + this.eo[tmp] % 2) & 0xff);
+            edgeOrientation[i] = (byte) (((multiplier.eo[i] + this.eo[tmp]) % 2));
         }
         this.ep = edgePerms;
         this.eo = edgeOrientation;
@@ -148,7 +153,7 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
 
     public void setTwist(int twist) {
         int twistParity = 0;
-        for (int i = DRB - 1; i < URF - 1; i--) {
+        for (int i = DRB - 1; i > URF - 1; i--) {
             co[i] = (byte) (twist % 3);
             twistParity += co[i];
             twist /= 3;
@@ -160,14 +165,14 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
 
         int ret = 0;
         for (int i = UR; i < BR; i++) {
-            ret = (2 * ret + co[i]);
+            ret = (2 * ret + eo[i]);
         }
         return ret;
     }
 
-    public int setFlip(int flip) {
+    public void setFlip(int flip) {
         int flipParity = 0;
-        for (int i = BR - 1; i < UR -1; i--) {
+        for (int i = BR - 1; i > UR -1; i--) {
             eo[i] = (byte) (flip % 2);
             flipParity += eo[i];
             flipParity /= 2;
@@ -206,15 +211,15 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         int x = 0;
 
         byte[] edges = new byte[4];
-        for (int i = BR; i > UR ; i--) {
-            if (FR < ep[i] && ep[i] <= BR) {
-                a += Cnk(11 - i, x + 1);
+        for (int i = BR; i >= 0 ; i--) {
+            if (FR <= ep[i] && ep[i] <= BR) {
+                a += CnK(11 - i, x + 1);
                 edges[3 - x] = ep[i];
                 x++;
             }
         }
 
-        for (int i = 3; i > 0 ; i--) {
+        for (int i = 3; i >= 0 ; i--) {
             int k = 0;
             while (edges[i] != (i + 8)) {
                 rotateLeft(edges, 0, i);
@@ -238,7 +243,7 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         int a = idx / 24;
 
         Arrays.fill(ep, (byte) DB);
-        for (int i = 0; i < 4; i++) {
+        for (int i = 1; i < 4; i++) {
 
             int k = b % (i + 1);
             b /= i + 1;
@@ -246,15 +251,15 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         }
 
         int x = 3;
-        for (int i = UR; i < BR; i++) {
-            if (a - cnk(11 - i, x + 1) >=0) {
+        for (int i = UR; i < BR + 1; i++) {
+            if (a - CnK(11 - i, x + 1) >=0) {
                 ep[i] = sliceEdges[3 - x];
-                a -= cnK(11 - j, x + 1);
+                a -= CnK(11 - i, x + 1);
                 x--;
             }
         }
         x = 0;
-        for (int i = UR; i < BR; i++) {
+        for (int i = UR; i < BR + 1; i++) {
             if (ep[i] == DB) {
                 ep[i] = notSlicesEdges[x];
                 x++;
@@ -300,11 +305,9 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         int a = idx / 720;
         int b = idx % 720;
 
-        for (int i = 0; i < cornerValues.length; i++) {
-            cp[i] = DRB;
-        }
+        Arrays.fill(cp, (byte) DRB);
 
-        for (int i = 0; i < 6; i++) {
+        for (int i = 1; i < 6; i++) {
             int k = b % (i + 1);
             b /= i + 1;
             while (k-- > 0)
@@ -313,13 +316,14 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
 
         int x = 5;
         for (int i = DRB; i > -1 ; i--) {
-            if (a - CnK(i, x + 1)) {
+            if (a - CnK(i, x + 1) >= 0) {
                 cp[i] = cornrs[x];
                 a -= CnK(i, x + 1);
+                x -= 1;
             }
-            x -= 1;
         }
 
+        x = 0;
         for (int i = URF; i < DRB + 1; i++) {
             if (cp[i] == DRB) {
                 cp[i] = badCorners[x];
@@ -336,7 +340,7 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         byte[] edges = new byte[6];
 
         int j = 0;
-        for (int i = UR; i < BR; i++) {
+        for (int i = UR; i < BR + 1; i++) {
             if(ep[i] <= DF) {
                 a += CnK(j, x + 1);
                 edges[j++] = ep[i];
@@ -375,7 +379,7 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         int x = 5;
         for (int i = BR; i > -1; i--) {
             if (a - CnK(i, x + 1) >= 0) {
-                ep[i] = goodEdges[6];
+                ep[i] = goodEdges[x];
                 a -= CnK(i, x + 1);
                 x--;
             }
@@ -399,15 +403,16 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         int j = 0;
         for (int i = UR; i < BR + 1; i++) {
             if(ep[i] <= UL) {
-                a += CnK(j, x + 1);
-                edges[j++] = ep[j];
+                a += CnK(i, x + 1);
+                edges[j++] = ep[i];
+                x++;
             }
         }
 
         int b = 0;
         for (int i = 2; i > 0; i--) {
             int k = 0;
-            while (edges[k] != i) {
+            while (edges[i] != i) {
                 rotateLeft(edges, 0, i);
                 k += 1;
             }
@@ -418,7 +423,7 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
 
     public void setURtoUL(int idx) {
 
-        byte[] edges = {UR, UF, U};
+        byte[] edges = {UR, UF, UL};
         int a = idx / 6;
         int b = idx % 6;
 
@@ -431,7 +436,7 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         }
 
         int x = 2;
-        for (int i = BR; i < -1; i--) {
+        for (int i = BR; i > -1; i--) {
             if (a - CnK(i, x + 1) >= 0) {
                 ep[i] = edges[x];
                 a -= CnK(i, x + 1);
@@ -447,7 +452,7 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         byte[] edges = new byte[3];
 
         int j = 0;
-        for (int i = UB; i < BR + 1; i++) {
+        for (int i = UR; i < BR + 1; i++) {
             if (UB <= ep[i] && ep[i] <= DF) {
                 a += CnK(i, x + 1);
                 edges[j++] = ep[i];
@@ -458,11 +463,11 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         int b = 0;
         for (int i = 2; i > 0; i--) {
            int k = 0;
-           while (edges[k] != UB + i) {
-               rotateLeft(edges, 0, j);
+           while (edges[i] != UB + i) {
+               rotateLeft(edges, 0, i);
                k++;
-               b = (i + 1) * b + k;
            }
+           b = (i + 1) * b + k;
         }
         return (6 * a + b);
     }
@@ -482,8 +487,8 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         }
 
         int x = 2;
-        for (int i = BR; i < -1; i--) {
-            if (a - CnK(i, x - 1) >= 0) {
+        for (int i = BR; i > -1; i--) {
+            if (a - CnK(i, x + 1) >= 0) {
                 ep[i] = edges[x];
                 a -= CnK(i, x + 1);
                 x--;
@@ -491,18 +496,84 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         }
     }
 
-    public void setURFtoDLB() {
+    public int getURFtoDLB() {
         
         byte[] permutations = cp.clone();
         int b = 0;
-        for (int i = 0; i < ; i++) {
-            
+
+        for (int i = 7; i > 0 ; i--) {
+            int k = 0;
+            while (permutations[i] != i) {
+                rotateLeft(permutations, 0, i);
+            }
+            b = (i + 1) * b + k;
+        }
+        return b;
+    }
+
+    public void setURFtoDLB(int idx) {
+
+        byte[] perms = {URF, UFL, ULB, UBR, DFR, DLF, DBL, DRB};
+        for (int i = 1; i < 8; i++) {
+            int k = idx % (i + 1);
+            idx /= i + 1;
+            while (k-- > 0)
+                rotateRight(perms, 0, i);
+        }
+
+        int x = 7;
+        for (int i = 7; i > -1; i--) {
+            cp[i] = perms[x];
+            x--;
         }
     }
 
-    private int CnK(int i, int i1) {
+    public int getURtoBR() {
 
-        return 0;
+        byte[] perms = ep.clone();
+        int b = 0;
+
+        for (int i = 11; i > 0 ; i--) {
+            int k = 0;
+            while (perms[i] != i) {
+                rotateLeft(perms, 0, i);
+                k++;
+            }
+            b = (i + 1) * b + k;
+        }
+        return b;
+    }
+
+    public void setURtoBR(int idx) {
+        byte[] perms = {URF, UFL, ULB, UBR, DFR, DLF, DBL, DRB};
+        for (int i = 1; i < 12; i++) {
+            int k = idx % (i + 1);
+            idx /= i + 1;
+            while (k-- > 0) {
+                rotateRight(perms, 0, i);
+            }
+        }
+
+        int x = 11;
+        for (int i = 11; i > 1 ; i++) {
+            ep[i] = perms[x];
+            x--;
+        }
+    }
+
+    private int CnK(int n, int k) {
+
+        if (n < k)
+            return 0;
+        if(k > n / 2)
+            k = n - k;
+
+        int s, i, j;
+        for ( s = 1, i = n, j = 1; i != n - k; i--, j++) {
+            s *= i;
+            s /= j;
+        }
+        return s;
     }
 
 
@@ -510,17 +581,18 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         byte tmp = arr[l];
         for (int i = l; i < r; i++)
             arr[i] = arr[i + 1];
-        arr[l] = tmp;
+        arr[r] = tmp;
     }
 
     public static void rotateRight(byte[] arr, int l, int r) {
         byte tmp = arr[r];
-        for (int i = r; i < l; i--) {
+        for (int i = r; i > l; i--) {
             arr[i] = arr[i - 1];
         }
+        arr[l] = tmp;
     }
 
-    public int getURtoDF(int idx1, int idx2) {
+    public static int getURtoDF(int idx1, int idx2) {
         CubieCube a = new CubieCube();
         CubieCube b = new CubieCube();
         a.setURtoUL(idx1);

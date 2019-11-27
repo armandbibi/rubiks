@@ -5,8 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/ConstantCubieCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/ConstantCubieCube.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/CubieCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/CubieCube.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/FaceCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/FaceCube.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/Pruner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/Pruner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/PruningTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/PruningTable.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -120,6 +120,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/rubik/Rubicube.java</url>
           <line>51</line>
           <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/rubik2/Pruner.java</url>
+          <line>222</line>
+          <option name="timeStamp" value="108" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

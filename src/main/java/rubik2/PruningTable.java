@@ -4,15 +4,15 @@ import java.util.Arrays;
 
 public class PruningTable {
 
-    byte[] table;
+    char[] table;
 
     /**
      * generate a pruning table with the expected size;
      * @param size
      */
     public PruningTable(int size) {
-        table = new byte[size];
-        Arrays.fill(table, (byte) -1);
+        table = new char[size];
+        Arrays.fill(table, (char) -1);
     }
 
     /**
@@ -29,13 +29,13 @@ public class PruningTable {
             table[index / 2] &= 0x0F | (value << 4);
     }
 
-    public byte getPruning(int index) {
+    public char getPruning(int index) {
 
-        byte ret;
+        char ret;
         if((index & 1) == 0)
-            ret = (byte) (table[index / 2] & 0x0f);
+            ret = (char) (table[index / 2] & 0x0f);
         else
-            ret = (byte) ((table[index / 2] & 0xf0) >> 4);
+            ret = (char) ((table[index / 2] & 0xf0) >> 4);
         return ret;
     }
 }

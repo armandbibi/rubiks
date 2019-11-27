@@ -2,7 +2,7 @@ package rubik2;
 
 import org.springframework.boot.autoconfigure.jdbc.JdbcOperationsDependsOnPostProcessor;
 
-public class Pruner implements ConstantCoords{
+public class Pruner implements ConstantCoords, ConstantCubieCube{
 
 
 
@@ -47,7 +47,7 @@ public class Pruner implements ConstantCoords{
         initMergeURtoULandUBtoDF();
 
         //init pruning tables
-        initTableCornerPermutation_UDSlicePermutation_Phase2();
+       initTableCornerPermutation_UDSlicePermutation_Phase2();
         initTableEdgePermutation_Phase2();
         initTableCornerTwist_UDSlicePosition_Phase1();
         initTableEdgeFlip_UDSlicePosition_phaseOne1();
@@ -64,10 +64,10 @@ public class Pruner implements ConstantCoords{
             cubieCube.setTwist(i);
             for (int j = 0; j < 6; j++) {
                 for (int k = 0; k < 3; k++) {
-                    cubieCube.multiplyTheCorners();
+                    cubieCube.multiplyTheCorners(moveCube[j]);
                     twistMove[i][3 * j + k] = (short) cubieCube.getTwist();
                 }
-                cubieCube.multiplyTheCorners();
+                cubieCube.multiplyTheCorners(moveCube[j]);
             }
         }
     }
@@ -77,9 +77,9 @@ public class Pruner implements ConstantCoords{
      */
     private static void initFlipMove () {
 
-        twistMove = new short[N_FLIP][N_MOVE];
+        flipMove = new short[N_FLIP][N_MOVE];
         CubieCube cubiCube = new CubieCube();
-        for (int i = 0; i < N_TWIST; i++) {
+        for (int i = 0; i < N_FLIP; i++) {
             cubiCube.setFlip(i);
             for (int j = 0; j < 6; j++) {
                 for (int k = 0; k < 3; k++) {
@@ -134,7 +134,7 @@ public class Pruner implements ConstantCoords{
             for (int j = 0; j < 6; j++) {
                 for (int k = 0; k < 3; k++) {
                     cubieCube.multiplyTheCorners(moveCube[j]);
-                    FRtoBRMove[i][3 * j + k] = (short) cubieCube.getURFtoDLF();
+                    URFtoDLFMove[i][3 * j + k] = (short) cubieCube.getURFtoDLF();
                 }
                 cubieCube.multiplyTheCorners(moveCube[j]);
             }
@@ -147,7 +147,7 @@ public class Pruner implements ConstantCoords{
      */
     public static void initURtoDFMove() {
 
-        URtoULMove = new short[N_URtoDF][N_MOVE];
+        URtoDFMove = new short[N_URtoDF][N_MOVE];
         CubieCube cubieCube = new CubieCube();
         for (int i = 0; i < N_URtoDF; i++) {
             cubieCube.setURtoDF(i);
@@ -174,7 +174,7 @@ public class Pruner implements ConstantCoords{
             for (int j = 0; j < 6; j++) {
                 for (int k = 0; k < 3; k++) {
                     cubieCube.multiplyTheEdges(moveCube[j]);
-                    URtoULMove[i][3 * j + k] = cubieCube.getURToUL();
+                    URtoULMove[i][3 * j + k] = (short) cubieCube.getURtoUL();
                 }
                 cubieCube.multiplyTheEdges(moveCube[j]);
             }
@@ -193,7 +193,7 @@ public class Pruner implements ConstantCoords{
             for (int j = 0; j < 6; j++) {
                 for (int k = 0; k < 3; k++) {
                     cubieCube.multiplyTheEdges(moveCube[j]);
-                    UBtoDFMove[i][3 * j + k] = cubieCube.getUBtoDF();
+                    UBtoDFMove[i][3 * j + k] = (short) cubieCube.getUBtoDF();
                 }
                 cubieCube.multiplyTheEdges(moveCube[j]);
             }
@@ -207,7 +207,7 @@ public class Pruner implements ConstantCoords{
         mergeURtoULandUBtoDF = new short[SIZE_MERGE_UR_TO_UL_AND_UB_TO_DF][SIZE_MERGE_UR_TO_UL_AND_UB_TO_DF];
         for (int urToUL = 0; urToUL < SIZE_MERGE_UR_TO_UL_AND_UB_TO_DF; urToUL++) {
             for (int UBtoUL = 0; UBtoUL < SIZE_MERGE_UR_TO_UL_AND_UB_TO_DF; UBtoUL++) {
-                mergeURtoULandUBtoDF[urToUL][UBtoUL] = getURtoDF(urToUL, UBtoUL);
+                mergeURtoULandUBtoDF[urToUL][UBtoUL] = (short) CubieCube.getURtoDF(urToUL, UBtoUL);
             }
         }
     }
@@ -215,18 +215,18 @@ public class Pruner implements ConstantCoords{
 
     private static void initTableCornerPermutation_UDSlicePermutation_Phase2() {
 
-        final int size = N_SLICE2 * N_URtoUL * N_PARITY / 2;
+        final int size = N_SLICE2 * N_URFtoDLF * N_PARITY / 2;
 
         PruningTable table = new PruningTable(size);
         int depth = 0;
         table.setPruning(0, 0);
         int done = 1;
 
-        while (done != size) {
-            for (int i = 0; i < size; i++) {
-                int parity = i / 2;
-                int URFtoDLF = i / 2 / N_SLICE2;
-                int slice = i / 2 / N_SLICE2;
+        while (done != N_SLICE2 * N_URFtoDLF * N_PARITY) {
+            for (int i = 0; i < N_SLICE2 * N_URFtoDLF * N_PARITY; i++) {
+                int parity = i % 2;
+                int URFtoDLF = (i / 2) / N_SLICE2;
+                int slice = (i / 2) % N_SLICE2;
 
                 if (table.getPruning(i) == depth) {
                     for (int j = 0; j < 18; j++) {
@@ -237,7 +237,7 @@ public class Pruner implements ConstantCoords{
                             int newParity = parityMove[parity][j];
                             int index = (N_SLICE2 * newURFtoDLF + newSlice) * 2 + newParity;
                             if (table.getPruning(index) == 0x0F) {
-                                table.setPruning(index, (depth + 1) & 0xFF);
+                                table.setPruning(index, (char)(depth + 1) & 0xFF);
                                 done++;
                             }
                         }
@@ -334,10 +334,12 @@ public class Pruner implements ConstantCoords{
                         int newFlip = flipMove[flip][j];
                         if (table.getPruning(N_SLICE1 * newFlip + newSlice) == 0x0f) {
                             table.setPruning(N_SLICE1 * newFlip + newSlice, (depth + 1) & 0xff);
+                            done++;
                         }
                     }
                 }
             }
+            depth++;
         }
     }
 }

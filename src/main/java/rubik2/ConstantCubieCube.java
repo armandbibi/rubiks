@@ -7,102 +7,102 @@ public interface ConstantCubieCube {
     /*--- color const ---*/
     /*--------------------*/
 
-    public static final int U = 0;
-    public static final int R = 1;
-    public static final int F = 2;
-    public static final int D = 3;
-    public static final int L = 4;
-    public static final int B = 5;
+    int U = 0;
+    int R = 1;
+    int F = 2;
+    int D = 3;
+    int L = 4;
+    int B = 5;
 
     /*--------------------*/
     /*--- corner const ---*/
     /*--------------------*/
 
-    public static final int URF = 0;
-    public static final int UFL = 1;
-    public static final int ULB = 2;
-    public static final int UBR = 3;
-    public static final int DFR = 4;
-    public static final int DLF = 5;
-    public static final int DBL = 6;
-    public static final int DRB = 7;
+    int URF = 0;
+    int UFL = 1;
+    int ULB = 2;
+    int UBR = 3;
+    int DFR = 4;
+    int DLF = 5;
+    int DBL = 6;
+    int DRB = 7;
 
     /*--------------------*/
     /*---  edge const  ---*/
     /*--------------------*/
 
-    public static final int UR = 0;
-    public static final int UF = 1;
-    public static final int UL = 2;
-    public static final int UB = 3;
-    public static final int DR = 4;
-    public static final int DF = 5;
-    public static final int DL = 6;
-    public static final int DB = 7;
-    public static final int FR = 8;
-    public static final int FL = 9;
-    public static final int BL = 10;
-    public static final int BR = 11;
+    int UR = 0;
+    int UF = 1;
+    int UL = 2;
+    int UB = 3;
+    int DR = 4;
+    int DF = 5;
+    int DL = 6;
+    int DB = 7;
+    int FR = 8;
+    int FL = 9;
+    int BL = 10;
+    int BR = 11;
 
 
     /*---------------------*/
     /*--- facelet const ---*/
     /*---------------------*/
 
-    public static final int U1 = 0;
-    public static final int U2 = 1;
-    public static final int U3 = 2;
-    public static final int U4 = 3;
-    public static final int U5 = 4;
-    public static final int U6 = 5;
-    public static final int U7 = 6;
-    public static final int U8 = 7;
-    public static final int U9 = 8;
-    public static final int R1 = 9;
-    public static final int R2 = 10;
-    public static final int R3 = 11;
-    public static final int R4 = 12;
-    public static final int R5 = 13;
-    public static final int R6 = 14;
-    public static final int R7 = 15;
-    public static final int R8 = 16;
-    public static final int R9 = 17;
-    public static final int F1 = 18;
-    public static final int F2 = 19;
-    public static final int F3 = 20;
-    public static final int F4 = 21;
-    public static final int F5 = 22;
-    public static final int F6 = 23;
-    public static final int F7 = 24;
-    public static final int F8 = 25;
-    public static final int F9 = 26;
-    public static final int D1 = 27;
-    public static final int D2 = 28;
-    public static final int D3 = 29;
-    public static final int D4 = 30;
-    public static final int D5 = 31;
-    public static final int D6 = 32;
-    public static final int D7 = 33;
-    public static final int D8 = 34;
-    public static final int D9 = 35;
-    public static final int L1 = 36;
-    public static final int L2 = 37;
-    public static final int L3 = 38;
-    public static final int L4 = 39;
-    public static final int L5 = 40;
-    public static final int L6 = 41;
-    public static final int L7 = 42;
-    public static final int L8 = 43;
-    public static final int L9 = 44;
-    public static final int B1 = 45;
-    public static final int B2 = 46;
-    public static final int B3 = 47;
-    public static final int B4 = 48;
-    public static final int B5 = 49;
-    public static final int B6 = 50;
-    public static final int B7 = 51;
-    public static final int B8 = 52;
-    public static final int B9 = 53;
+    int U1 = 0;
+    int U2 = 1;
+    int U3 = 2;
+    int U4 = 3;
+    int U5 = 4;
+    int U6 = 5;
+    int U7 = 6;
+    int U8 = 7;
+    int U9 = 8;
+    int R1 = 9;
+    int R2 = 10;
+    int R3 = 11;
+    int R4 = 12;
+    int R5 = 13;
+    int R6 = 14;
+    int R7 = 15;
+    int R8 = 16;
+    int R9 = 17;
+    int F1 = 18;
+    int F2 = 19;
+    int F3 = 20;
+    int F4 = 21;
+    int F5 = 22;
+    int F6 = 23;
+    int F7 = 24;
+    int F8 = 25;
+    int F9 = 26;
+    int D1 = 27;
+    int D2 = 28;
+    int D3 = 29;
+    int D4 = 30;
+    int D5 = 31;
+    int D6 = 32;
+    int D7 = 33;
+    int D8 = 34;
+    int D9 = 35;
+    int L1 = 36;
+    int L2 = 37;
+    int L3 = 38;
+    int L4 = 39;
+    int L5 = 40;
+    int L6 = 41;
+    int L7 = 42;
+    int L8 = 43;
+    int L9 = 44;
+    int B1 = 45;
+    int B2 = 46;
+    int B3 = 47;
+    int B4 = 48;
+    int B5 = 49;
+    int B6 = 50;
+    int B7 = 51;
+    int B8 = 52;
+    int B9 = 53;
 
     /*-----------------------------*/
     /*---- Array to hold values ---*/
@@ -113,4 +113,42 @@ public interface ConstantCubieCube {
     public static final byte[] edgesValues = new byte[]{UR, UF, UL, UB, DR, DF, DL, DB, FR, FL, BL, BR};
 
 
+    byte[] cpU = {UBR, URF, UFL, ULB, DFR, DLF, DBL, DRB};
+    byte[] coU = {0, 0, 0, 0, 0, 0, 0, 0};
+    byte[] epU = {UB, UR, UF, UL, DR, DF, DL, DB, FR, FL, BL, BR};
+    byte[] eoU = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    byte[] cpR = {DFR, UFL, ULB, URF, DRB, DLF, DBL, UBR};
+    byte[] coR = {2, 0, 0, 1, 1, 0, 0, 2};
+    byte[] epR = {FR, UF, UL, UB, BR, DF, DL, DB, DR, FL, BL, UR};
+    byte[] eoR = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    byte[] cpF = {UFL, DLF, ULB, UBR, URF, DFR, DBL, DRB};
+    byte[] coF = {1, 2, 0, 0, 2, 1, 0, 0};
+    byte[] epF = {UR, FL, UL, UB, DR, FR, DL, DB, UF, DF, BL, BR};
+    byte[] eoF = {0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0};
+    byte[] cpD = {URF, UFL, ULB, UBR, DLF, DBL, DRB, DFR};
+    byte[] coD = {0, 0, 0, 0, 0, 0, 0, 0};
+    byte[] epD = {UR, UF, UL, UB, DF, DL, DB, DR, FR, FL, BL, BR};
+    byte[] eoD = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    byte[] cpL = {URF, ULB, DBL, UBR, DFR, UFL, DLF, DRB};
+    byte[] coL = {0, 1, 2, 0, 0, 2, 1, 0};
+    byte[] epL = {UR, UF, BL, UB, DR, DF, FL, DB, FR, UL, DL, BR};
+    byte[] eoL = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    byte[] cpB = {URF, UFL, UBR, DRB, DFR, DLF, ULB, DBL};
+    byte[] coB = {0, 0, 1, 2, 0, 0, 2, 1};
+    byte[] epB = {UR, UF, UL, BR, DR, DF, DL, BL, FR, FL, UB, DB};
+    byte[] eoB = {0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1};
+
+
+    /*-----------------------------*/
+    /*---- move for the cubicub ---*/
+    /*-----------------------------*/
+
+
+    CubieCube[] moveCube = {
+    new CubieCube(cpU, coU, epU, eoU),
+    new CubieCube(cpR, coR, epR, eoR),
+    new CubieCube(cpF, coF, epF, eoF),
+    new CubieCube(cpD, coD, epD, eoD),
+    new CubieCube(cpL, coL, epL, eoL),
+    new CubieCube(cpB, coB, epB, eoB)};
 }
