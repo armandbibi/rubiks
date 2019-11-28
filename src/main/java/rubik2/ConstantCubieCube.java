@@ -113,31 +113,30 @@ public interface ConstantCubieCube {
     public static final byte[] edgesValues = new byte[]{UR, UF, UL, UB, DR, DF, DL, DB, FR, FL, BL, BR};
 
 
-    byte[] cpU = {UBR, URF, UFL, ULB, DFR, DLF, DBL, DRB};
-    byte[] coU = {0, 0, 0, 0, 0, 0, 0, 0};
-    byte[] epU = {UB, UR, UF, UL, DR, DF, DL, DB, FR, FL, BL, BR};
-    byte[] eoU = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    byte[] cpR = {DFR, UFL, ULB, URF, DRB, DLF, DBL, UBR};
-    byte[] coR = {2, 0, 0, 1, 1, 0, 0, 2};
-    byte[] epR = {FR, UF, UL, UB, BR, DF, DL, DB, DR, FL, BL, UR};
-    byte[] eoR = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    byte[] cpF = {UFL, DLF, ULB, UBR, URF, DFR, DBL, DRB};
-    byte[] coF = {1, 2, 0, 0, 2, 1, 0, 0};
-    byte[] epF = {UR, FL, UL, UB, DR, FR, DL, DB, UF, DF, BL, BR};
-    byte[] eoF = {0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0};
-    byte[] cpD = {URF, UFL, ULB, UBR, DLF, DBL, DRB, DFR};
-    byte[] coD = {0, 0, 0, 0, 0, 0, 0, 0};
-    byte[] epD = {UR, UF, UL, UB, DF, DL, DB, DR, FR, FL, BL, BR};
-    byte[] eoD = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    byte[] cpL = {URF, ULB, DBL, UBR, DFR, UFL, DLF, DRB};
-    byte[] coL = {0, 1, 2, 0, 0, 2, 1, 0};
-    byte[] epL = {UR, UF, BL, UB, DR, DF, FL, DB, FR, UL, DL, BR};
-    byte[] eoL = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    byte[] cpB = {URF, UFL, UBR, DRB, DFR, DLF, ULB, DBL};
-    byte[] coB = {0, 0, 1, 2, 0, 0, 2, 1};
-    byte[] epB = {UR, UF, UL, BR, DR, DF, DL, BL, FR, FL, UB, DB};
-    byte[] eoB = {0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1};
-
+    char  cpU[]  = { UBR, URF, UFL, ULB, DFR, DLF, DBL, DRB };
+    char  coU[]  = { 0, 0, 0, 0, 0, 0, 0, 0 };
+    char  epU[] = { UB, UR, UF, UL, DR, DF, DL, DB, FR, FL, BL, BR };
+    char  eoU[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    char  cpR[]  = { DFR, UFL, ULB, URF, DRB, DLF, DBL, UBR };
+    char  coR[]  = { 2, 0, 0, 1, 1, 0, 0, 2 };
+    char  epR[] = { FR, UF, UL, UB, BR, DF, DL, DB, DR, FL, BL, UR };
+    char  eoR[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    char  cpF[]  = { UFL, DLF, ULB, UBR, URF, DFR, DBL, DRB };
+    char  coF[]  = { 1, 2, 0, 0, 2, 1, 0, 0 };
+    char  epF[] = { UR, FL, UL, UB, DR, FR, DL, DB, UF, DF, BL, BR };
+    char  eoF[] = { 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0 };
+    char  cpD[]  = { URF, UFL, ULB, UBR, DLF, DBL, DRB, DFR };
+    char  coD[]  = { 0, 0, 0, 0, 0, 0, 0, 0 };
+    char  epD[] = { UR, UF, UL, UB, DF, DL, DB, DR, FR, FL, BL, BR };
+    char  eoD[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    char  cpL[]  = { URF, ULB, DBL, UBR, DFR, UFL, DLF, DRB };
+    char  coL[]  = { 0, 1, 2, 0, 0, 2, 1, 0 };
+    char  epL[] = { UR, UF, BL, UB, DR, DF, FL, DB, FR, UL, DL, BR };
+    char  eoL[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    char  cpB[]  = { URF, UFL, UBR, DRB, DFR, DLF, ULB, DBL };
+    char  coB[]  = { 0, 0, 1, 2, 0, 0, 2, 1 };
+    char  epB[] = { UR, UF, UL, BR, DR, DF, DL, BL, FR, FL, UB, DB };
+    char  eoB[] = { 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1 };
 
     /*-----------------------------*/
     /*---- move for the cubicub ---*/

@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ba7f60b3-0a1e-452f-9ca9-f801874f5b40" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/ConstantCubieCube.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/rubik2/ConstantCubieCube.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/CubieCube.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/rubik2/CubieCube.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/Pruner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/rubik2/Pruner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/PruningTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/rubik2/PruningTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/ConstantCoords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/ConstantCoords.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/ConstantCubieCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/ConstantCubieCube.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/CubieCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/CubieCube.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/Pruner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/Pruner.java" afterDir="false" />
@@ -73,7 +78,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="MainRubikARGS" type="Application" factoryName="Application" editBeforeRun="true" temporary="true">
+    <configuration name="rubiksmain" type="Application" factoryName="Application" editBeforeRun="true" temporary="true">
       <option name="MAIN_CLASS_NAME" value="MainRubik" />
       <module name="untitled.main" />
       <option name="PROGRAM_PARAMETERS" value="LEFT" />
@@ -83,7 +88,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainRubikARGS" />
+        <item itemvalue="Application.rubiksmain" />
       </list>
     </recent_temporary>
   </component>
@@ -120,11 +125,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/rubik/Rubicube.java</url>
           <line>51</line>
           <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/rubik2/Pruner.java</url>
-          <line>222</line>
-          <option name="timeStamp" value="108" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -29,13 +29,13 @@ public class PruningTable {
             table[index / 2] &= 0x0F | (value << 4);
     }
 
-    public char getPruning(int index) {
+    public int getPruning(int index) {
 
         char ret;
         if((index & 1) == 0)
             ret = (char) (table[index / 2] & 0x0f);
         else
-            ret = (char) ((table[index / 2] & 0xf0) >> 4);
+            ret = (char) ((table[index / 2] >> 4) & 0x0F);
         return ret;
     }
 }
