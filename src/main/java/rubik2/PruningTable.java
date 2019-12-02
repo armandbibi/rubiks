@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class PruningTable {
 
-    char[] table;
+    public char[] table;
 
     /**
      * generate a pruning table with the expected size;
@@ -12,7 +12,7 @@ public class PruningTable {
      */
     public PruningTable(int size) {
         table = new char[size];
-        Arrays.fill(table, (char) -1);
+        Arrays.fill((char[]) table, (char) 0xff);
     }
 
     /**
@@ -21,12 +21,12 @@ public class PruningTable {
      * @param index where to put it
      * @param value what to put where
      */
-    public void setPruning(int index, int value) {
+    public void setPruning(int index, char value) {
 
         if ((index & 1) == 0)
-            table[index / 2] &= 0xF0 | value;
+            table[index / 2] &= 0xF0 | (value & 0x0f);
         else
-            table[index / 2] &= 0x0F | (value << 4);
+            table[index / 2] &= 0x0F | ((value & 0x0f) << 4);
     }
 
     public int getPruning(int index) {
@@ -35,7 +35,7 @@ public class PruningTable {
         if((index & 1) == 0)
             ret = (char) (table[index / 2] & 0x0f);
         else
-            ret = (char) ((table[index / 2] >> 4) & 0x0F);
+            ret = (char) ((table[index / 2] >>> 4) & 0x0F);
         return ret;
     }
 }

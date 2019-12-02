@@ -112,7 +112,7 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         char[] edgePerms = new char[edgesValues.length];
         char[] edgeOrientation = new char[edgesValues.length];
 
-        for (int i = 0; i < edgesValues.length; i++) {
+        for (int i = 0; i < 12; i++) {
             edgePerms[i] = this.ep[multiplier.ep[i]];
             edgeOrientation[i] = (char) ((multiplier.eo[i] + this.eo[multiplier.ep[i]]) % 2);
         }
@@ -162,18 +162,19 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
     public short getFlip() {
 
         short ret = 0;
-        for (int i = UR; i < BR; i++)
+        for (int i = 0; i < 11; i++)
             ret = (short) (2 * ret + eo[i]);
         return ret;
     }
 
-    public void setFlip(int flip) {
+    public void setFlip(short flip) {
         int flipParity = 0;
-        for (int i = BR - 1; i >= UR; i--) {
+        for (int i = 10; i >= 0; i--) {
             flipParity += eo[i] = (char) (flip % 2);;
-            flipParity /= 2;
+            flip /= 2;
+
         }
-        eo[BR] = (char) ((2 - flipParity % 2) % 2);
+        eo[11] = (char) ((2 - flipParity % 2) % 2);
     }
 
     public int getCornerParity() {
@@ -218,7 +219,7 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
             int k = 0;
             while (edges[i] != (i + 8)) {
                 rotateLeft(edges, 0, i);
-                k ++;
+                k++;
             }
             b = (i + 1) * b + k;
         }
@@ -238,6 +239,7 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         int a = idx / 24;
 
         Arrays.fill(ep, (char) DB);
+
         for (int i = 1; i < 4; i++) {
 
             int k = b % (i + 1);

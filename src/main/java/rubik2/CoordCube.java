@@ -15,6 +15,14 @@ public class CoordCube implements ConstantCoords {
 
     public CoordCube(CubieCube cube) {
 
+        twist = cube.getTwist();
+        flip = cube.getFlip();
+        parity = (short) cube.getCornerParity();
+        FRtoBR = cube.getFRtoBR();
+        URFtoDLF = (short) cube.getURFtoDLF();
+        URtoUl = cube.getURtoUL();
+        UBtoDF = cube.getUBtoDF();
+        URtoDF = (short) cube.getURtoDF();
     }
 
     /**
@@ -23,17 +31,52 @@ public class CoordCube implements ConstantCoords {
      */
     public void move(int m) {
 
-     /*   twist = twistMove[twist][m];
-        flip = flipMove[flip][m];
-        parity = parityMove[parity][m];
-        FRtoBR = FRtoBRMove[FRtoBR][m];
-        URFtoDLF = URFtoDLFMove[URFtoDLF][m];
-        URtoUl = URtoUlMove[URtoUl][m];
-        UBtoDF = UBtoDFMove[UBtoDF][m];
+        twist = Pruner.twistMove[twist][m];
+        flip = Pruner.flipMove[flip][m];
+        parity = Pruner.parityMove[parity][m];
+        FRtoBR = Pruner.FRtoBRMove[FRtoBR][m];
+        URFtoDLF = Pruner.URFtoDLFMove[URFtoDLF][m];
+        URtoUl = Pruner.URtoULMove[URtoUl][m];
+        UBtoDF = Pruner.UBtoDFMove[UBtoDF][m];
         // because of group if UR, UL, UL, UB, DR, DF are not in UD, we dont need to update this.
         if (URtoUl < 336 && UBtoDF < 336) {
-            URtoDF = mergeFlip();
+            URtoDF = Pruner.mergeURtoULandUBtoDF[URtoUl][UBtoDF];
         }
-*/
+    }
+
+    /*--------------------------*/
+    /*--- getter and setters ---*/
+    /*--------------------------*/
+
+    public short getTwist() {
+        return twist;
+    }
+
+    public short getFlip() {
+        return flip;
+    }
+
+    public short getParity() {
+        return parity;
+    }
+
+    public short getFRtoBR() {
+        return FRtoBR;
+    }
+
+    public short getURFtoDLF() {
+        return URFtoDLF;
+    }
+
+    public short getURtoUl() {
+        return URtoUl;
+    }
+
+    public short getUBtoDF() {
+        return UBtoDF;
+    }
+
+    public short getURtoDF() {
+        return URtoDF;
     }
 }
