@@ -26,22 +26,8 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         this.eo = eo;
     }
 
-    public FaceCube toFaceCube() {
-
-        FaceCube faceCube = new FaceCube();
-        for (int i = 0; i < cornerValues.length; i++) {
-            int corner = cp[i];
-            int orientation = co[i];
-            for (int j = 0; j < 3; j++) {
-                byte tmp = faceCube.getCornerFacelet()[i][j + orientation % 3];
-                // TODO finish function
-            }
-        }
-        return null;
-    }
-
     /**
-     * multiply 2 cubes. use symetric rduction for the corner. see kociemba.org (like all this code)
+     * multiply 2 cubes. use symetric reduction for the corner. see kociemba.org (like all this code)
      * @param multiplier cube to multiply
      */
     public void multiply(CubieCube multiplier) {
@@ -335,7 +321,7 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
 
         char[] edges = new char[6];
 
-        for (int i = UR; i < BR + 1; i++) {
+        for (int i = UR; i <= BR; i++) {
             if(ep[i] <= DF) {
                 a += CnK(i, x + 1);
                 edges[x++] = ep[i];
@@ -349,7 +335,7 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
                 rotateLeft(edges, 0, i);
                 k++;
             }
-            b += (i + 1) * b + k;
+            b = (i + 1) * b + k;
         }
         return 720 * a + b;
     }
@@ -485,7 +471,7 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
     }
 
     public int getURFtoDLB() {
-        
+
         char[] permutations = cp.clone();
         int b = 0;
 
@@ -610,4 +596,5 @@ public class CubieCube implements ConstantCubieCube, Cloneable{
         cloned.cp = this.cp.clone();
         return cloned;
     }
+
 }

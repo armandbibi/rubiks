@@ -25,6 +25,19 @@ public class CoordCube implements ConstantCoords {
         URtoDF = (short) cube.getURtoDF();
     }
 
+    public CubieCube toCubieCube() {
+
+        CubieCube cube = new CubieCube();
+        cube.setTwist(twist);
+        cube.setFlip(flip);
+        cube.setFRtoBR(getFRtoBR());
+        cube.setURtoUL(URtoUl);
+        cube.setURFtoDLF(URFtoDLF);
+        cube.setUBtoDF(UBtoDF);
+        cube.setURtoDF(URtoDF);
+        return cube;
+    }
+
     /**
      * move coordonates thks to the beauty of math
      * @param m permit to access in the table what we are looking for> see it as an index.
@@ -76,7 +89,4 @@ public class CoordCube implements ConstantCoords {
         return UBtoDF;
     }
 
-    public short getURtoDF() {
-        return URtoDF;
-    }
 }

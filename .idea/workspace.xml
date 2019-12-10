@@ -1,22 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba7f60b3-0a1e-452f-9ca9-f801874f5b40" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/rubik2/Parser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rubik2/Solver.java" afterDir="false" />
+    <list default="true" id="2da10865-6a33-4d80-80b7-f08772306a43" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/rubik2/RandomPathGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rubik2/SolutionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rubik2/SolverV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rubik2/TestSuitForCorrection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rubik2/bad shuffle dont know why" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/armand.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/untitled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/untitled.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/untitled.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/untitled.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/untitled.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/untitled.test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/MainRubik.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainRubik.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/CoordCube.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/rubik2/CoordCube.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/CornerValues.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/CubieCube.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/rubik2/CubieCube.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/Pruner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/rubik2/Pruner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/PruningTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/rubik2/PruningTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rubik/IDAStar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rubik/Rubicube.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rubik/Rubicube.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/META-INF/untitled.main.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/MainRubik.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/Heuristic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/Move.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/Rubicube.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/State.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/Swaper$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/Swaper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/coordinates/BorderOrientationCoordinate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/coordinates/CornerOrientationCoordinate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/coordinates/UDSliceCoordinate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/coordinates/coordinate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/coordinates/pruningTable/PruningTableOne.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/cubeUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/kociemba.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/stageSolution/StageSolutionInformater.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/stageSolution/firstStageInformater.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/CubeUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/IDASTAR$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/IDASTAR.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/borderUtils$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/borderUtils$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/borderUtils$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/borderUtils$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/borderUtils$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/borderUtils$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/borderUtils$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/borderUtils$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/borderUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/ConstantCoords.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/ConstantCubieCube.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/CoordCube.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/CubieCube.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/FaceCube.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/Parser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/Pruner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/PruningTable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/Solver.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MainRubik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainRubik.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/CoordCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/CoordCube.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/CornerValues.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/CubieCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/CubieCube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/Pruner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/Pruner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/PruningTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/PruningTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/Solver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/table" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,11 +86,21 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -41,34 +108,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1SsNWvsD85RMngHluikzRCGX6xM" />
+  <component name="ProjectId" id="1UbdUtN1amNUKY9HojTEWxxMxEm" />
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
-    <key name="ExtractSuperBase.RECENT_KEYS">
-      <recent name="rubik.coordinates" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="rubik2" />
-      <recent name="rubik" />
-      <recent name="rubik.utils" />
-      <recent name="rubik.coordinates" />
-      <recent name="rubik.coordinatess" />
     </key>
-  </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="MainRubikARGS" />
-    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -83,30 +130,36 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="rubiksmain" type="Application" factoryName="Application" editBeforeRun="true" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="MainRubik" />
-      <module name="untitled.main" />
-      <option name="PROGRAM_PARAMETERS" value="LEFT" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="rubiks [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootRun" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.rubiksmain" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ba7f60b3-0a1e-452f-9ca9-f801874f5b40" name="Default Changelist" comment="" />
-      <created>1572348378391</created>
+      <changelist id="2da10865-6a33-4d80-80b7-f08772306a43" name="Default Changelist" comment="" />
+      <created>1575629248301</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1572348378391</updated>
+      <updated>1575629248301</updated>
     </task>
     <servers />
   </component>
@@ -127,24 +180,11 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/rubik/Rubicube.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/rubik2/Solver.java</url>
-          <line>155</line>
-          <option name="timeStamp" value="70" />
+          <url>file://$PROJECT_DIR$/src/main/java/rubik2/Parser.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="table.table[1200]" />
-        <watch expression="table" />
-        <watch expression="Pruner.tmpcahrs" />
-        <watch expression="Pruner.flipMove" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

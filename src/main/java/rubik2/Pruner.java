@@ -35,27 +35,9 @@ public class Pruner implements ConstantCoords, ConstantCubieCube{
     static PruningTable Slice_URtoDF_Parity_Prun;
     static PruningTable Slice_Twist_Prun;
     static PruningTable Slice_Flip_Prun;
-    private static char[] tmpcahrs;
-
-
 
     public static void initialize() {
 
-
-        char buf[] = new char[100000];
-        FileReader fr = null;
-        try {
-            fr = new FileReader("table");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        BufferedReader br = new BufferedReader(fr);
-        try {
-            br.read(buf);
-            tmpcahrs = buf;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         // init value tables
         initTwistMove();
         initFlipMove();
@@ -118,8 +100,8 @@ public class Pruner implements ConstantCoords, ConstantCubieCube{
     public static void initParityMove() {
 
         parityMove = new short[][]{
-                {1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1},
-        {0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0},
+                { 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1 },
+                { 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0 }
         };
     }
 
@@ -227,8 +209,8 @@ public class Pruner implements ConstantCoords, ConstantCubieCube{
     public static void initMergeURtoULandUBtoDF() {
         mergeURtoULandUBtoDF = new short[SIZE_MERGE_UR_TO_UL_AND_UB_TO_DF][SIZE_MERGE_UR_TO_UL_AND_UB_TO_DF];
         for (int urToUL = 0; urToUL < SIZE_MERGE_UR_TO_UL_AND_UB_TO_DF; urToUL++) {
-            for (int UBtoUL = 0; UBtoUL < SIZE_MERGE_UR_TO_UL_AND_UB_TO_DF; UBtoUL++) {
-                mergeURtoULandUBtoDF[urToUL][UBtoUL] = (short) CubieCube.getURtoDF(urToUL, UBtoUL);
+            for (int UBtoDF = 0; UBtoDF < SIZE_MERGE_UR_TO_UL_AND_UB_TO_DF; UBtoDF++) {
+                mergeURtoULandUBtoDF[urToUL][UBtoDF] = (short) CubieCube.getURtoDF(urToUL, UBtoDF);
             }
         }
     }
@@ -250,16 +232,19 @@ public class Pruner implements ConstantCoords, ConstantCubieCube{
                 int slice = (i / 2) % N_SLICE2;
 
                 if (table.getPruning(i) == depth) {
-                    for (int j = 0; j < 18; j++) {
-                        // we are only using 8 moves, not 18. have to check the list
-                        if (!badCoordonatesCornersPrunePhase2.contains(j)) {
-                            int newSlice = FRtoBRMove[slice][j];
-                            int newURFtoDLF = URFtoDLFMove[URFtoDLF][j];
-                            int newParity = parityMove[parity][j];
-                            int index = (N_SLICE2 * newURFtoDLF + newSlice) * 2 + newParity;
-                            if (table.getPruning(index) == 0x0F) {
-                                table.setPruning(index,((char)(depth + 1)));
-                                done++;
+                    for (int k = 0; k < 6; k++) {
+                        for (int m = 0; m < 3; m++) {
+                            // we are only using 8 moves, not 18. have to check the list
+                            int j = 3 * k + m;
+                            if (isAllowedMovePhaseTwo(k, m)) {
+                                int newSlice = FRtoBRMove[slice][j];
+                                int newURFtoDLF = URFtoDLFMove[URFtoDLF][j];
+                                int newParity = parityMove[parity][j];
+                                int index = (N_SLICE2 * newURFtoDLF + newSlice) * 2 + newParity;
+                                if (table.getPruning(index) == 0x0F) {
+                                    table.setPruning(index, (char) (depth + 1));
+                                    done++;
+                                }
                             }
                         }
                     }
@@ -286,16 +271,19 @@ public class Pruner implements ConstantCoords, ConstantCubieCube{
                 int slice = (i / 2) % N_SLICE2;
 
                 if (table.getPruning(i) == depth) {
-                    for (int j = 0; j < 18; j++) {
-                        // we are only using 8 moves, not 18. have to check the list
-                        if (!badCoordonatesCornersPrunePhase2.contains(j)) {
-                            int newSlice = FRtoBRMove[slice][j];
-                            int newURtoDF = URFtoDLFMove[URtoDF][j];
-                            int newParity = parityMove[parity][j];
-                            int index = (N_SLICE2 * newURtoDF + newSlice) * 2 + newParity;
-                            if (table.getPruning(index) == 0x0F) {
-                                table.setPruning(index, (char) (depth + 1));
-                                done++;
+                    for (int k = 0; k < 6; k++) {
+                        for (int m = 0; m < 3; m++) {
+                            // we are only using 8 moves, not 18. have to check the list
+                            int j = 3 * k + m;
+                            if (isAllowedMovePhaseTwo(k, m)) {
+                                int newSlice = FRtoBRMove[slice][j];
+                                int newURtoDF = URtoDFMove[URtoDF][j];
+                                int newParity = parityMove[parity][j];
+                                int index = (N_SLICE2 * newURtoDF + newSlice) * 2 + newParity;
+                                if (table.getPruning(index) == 0x0F) {
+                                    table.setPruning(index, (char) (depth + 1));
+                                    done++;
+                                }
                             }
                         }
                     }
@@ -364,4 +352,9 @@ public class Pruner implements ConstantCoords, ConstantCubieCube{
         }
         Slice_Flip_Prun = table;
     }
+
+    public static boolean isAllowedMovePhaseTwo(int i, int j) {
+        return (i == U || i == D || j== 1);
+    }
 }
+

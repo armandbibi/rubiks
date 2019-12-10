@@ -4,9 +4,7 @@ import rubik.coordinates.UDSliceCoordinate;
 import rubik.coordinates.pruningTable.PruningTableOne;
 import rubik.utils.CubeUtils;
 import rubik.utils.IDASTAR;
-import rubik2.CubieCube;
-import rubik2.Pruner;
-import rubik2.Solver;
+import rubik2.*;
 
 public class MainRubik {
 
@@ -19,9 +17,13 @@ public class MainRubik {
         System.out.println(UDSliceCoordinate.check(cube));
         System.out.println(CornerOrientationCoordinate.check(cube));
 */
-        Pruner.initialize();
-        Solver solver = new Solver(args);
+
+
+      /*  Pruner.initialize();
+        SolverV2 solver = new SolverV2(args);
         solver.resolve();
+*/
+        TestSuitForCorrection.suit();
 
   /*      IDASTAR idastar = new IDASTAR(cube);
         idastar.resolve();
