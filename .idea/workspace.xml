@@ -2,78 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2da10865-6a33-4d80-80b7-f08772306a43" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/rubik2/RandomPathGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rubik2/SolutionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rubik2/SolverV2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rubik2/TestSuitForCorrection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rubik2/bad shuffle dont know why" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/armand.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/untitled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/untitled.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/untitled.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/untitled.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/untitled.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/untitled.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rubik/IDAStar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rubik/Rubicube.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rubik/Rubicube.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/META-INF/untitled.main.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/MainRubik.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/Heuristic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/Move.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/Rubicube.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/State.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/Swaper$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/Swaper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/coordinates/BorderOrientationCoordinate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/coordinates/CornerOrientationCoordinate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/coordinates/UDSliceCoordinate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/coordinates/coordinate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/coordinates/pruningTable/PruningTableOne.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/cubeUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/kociemba.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/stageSolution/StageSolutionInformater.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/stageSolution/firstStageInformater.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/CubeUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/IDASTAR$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/IDASTAR.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/borderUtils$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/borderUtils$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/borderUtils$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/borderUtils$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/borderUtils$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/borderUtils$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/borderUtils$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/borderUtils$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik/utils/borderUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/ConstantCoords.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/ConstantCubieCube.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/CoordCube.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/CubieCube.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/FaceCube.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/Parser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/Pruner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/PruningTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/rubik2/Solver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainRubik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainRubik.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/CoordCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/CoordCube.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/CubieCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/CubieCube.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/Pruner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/Pruner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rubik2/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rubik2/Solver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/table" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
